@@ -1,27 +1,35 @@
-# POCTestWorkspace
+# Creating Angular Libraries and publishing them within github package registry
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This guide: https://medium.com/@brgrz/create-a-library-with-angular-and-publish-it-to-github-package-registry-c8184193b993 is pretty good, but there are a few tricks to be aware of.
 
-## Development server
+### Command line parameters
+All ng command line commands that have parameters require "--" even if it only shows a single dash, for example:
+```ng g library ComponentsLib -prefix cmpts```
+should actually be
+```ng g library ComponentsLib --prefix cmpts```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Build successfully without Ivy
+Before running ng build, add kvp to tsconfig.lib.json to avoid using Ivy:
+```
+"angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+    "enableIvy": false
+  },
+```
 
-## Code scaffolding
+### Push the workspace as a repo before Build and ensure agreement with repository node in package.json
+When adding the "repository" node to the library-level package.json file, make sure the node looks like this:
+```
+    "repository": {
+        "type": "git",
+        "url": https://github.com/OWNER/REPOSITORY”
+      }
+```
+And be sure the REPOSITORY name appended to the url matches the name of the repo you pushed for the workspace (not the name of the library/package itself)
+This url should not start with git and end with .git as suggested int he article (in our experience)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Build from the right directory level
+In step 8 make sure you run ng build from within the projects/<library> directory, not just the workspace
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
