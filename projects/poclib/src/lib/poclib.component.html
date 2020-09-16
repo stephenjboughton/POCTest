@@ -1,0 +1,29 @@
+<div class="content" role="main">
+    <!-- Highlight Card -->
+    <div class="card highlight-card card-small">
+      <span>{{ title }} app is running!</span>
+    </div>
+  </div>
+  <!-- cards -->
+  <div class="card-container">
+      <div class="card">
+        <label>Description:
+          <input type="text" placeholder="description" [(ngModel)]="pocEvent.description">
+        </label>
+      </div>
+  
+      <div class="card">
+        <label>Date:
+          <input type="text" placeholder="2020-XX-XX" [(ngModel)]="pocEvent.date">
+        </label>
+      </div>
+  
+      <div class="card">
+        <label>Recurring?:
+          <input type="checkbox" [(ngModel)]="pocEvent.isRecurring">
+        </label>
+      </div>
+  </div>
+  <div class="button-div">
+      <button (click)="save()">save</button>
+  </div>

@@ -1,0 +1,103 @@
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: Arial;
+  }
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .card {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    height: 75px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+  
+  .card label {
+    color: red;
+    font-weight: 150;
+    font-size: 16px;
+  }
+  
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    height: 50px;
+    min-width: 30%;
+    position: relative;
+  }
+  
+  .card.card.highlight-card span {
+    margin-left: 0px;
+  }
+  
+  .card.card-small {
+    max-width: 33%;
+  }
+  
+  .button-div {
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .button-div button {
+    display: block;
+    width: 10%;
+    margin: auto;
+    border: none;
+    background-color: orangered;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 4px;
+  }
+  
+  
