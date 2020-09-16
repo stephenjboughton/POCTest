@@ -33,3 +33,12 @@ This url should not start with git and end with .git as suggested int he article
 ### Build from the right directory level
 In step 8 make sure you run ng build from within the projects/<library> directory, not just the workspace
 
+### If component in library uses an html template with model binding, you need to add FormsModule to imports array within library's base .module.ts file
+Otherwise ng build will throw errors like "can't bind to 'ngModel' since it isn't a known property of 'input' when trying to compile
+
+### Use library Module, not individual components
+Although we may be using components from the library within other projects we need to import the libraryModule and add it to the imports array in those projects, not just import the individual components and add them to the declarations array.  
+
+### Unless you want to do an inline template within component.ts, you must reference html file with templateUrl, not template
+
+### css or scss also needs to be reference as styleUrls[], not just styles[]
