@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { pocEvent } from './poclib-types';
 
 @Component({
-  selector: 'cmpts-POCLib',
+  selector: 'test-POCLib',
   templateUrl: './poclib.component.html',
   styleUrls: [
     './poclib.component.scss'
