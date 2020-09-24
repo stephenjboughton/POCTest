@@ -1,0 +1,16 @@
+<div class="card-container">
+    <div class="card">
+      <label>Email:
+        <input type="text" placeholder="someone@something.com" [(ngModel)]="person.Handle">
+      </label>
+    </div>
+
+    <div class="card">
+      <label>Password:
+        <input type="text" placeholder="your password here" [(ngModel)]="person.Password">
+      </label>
+    </div>
+</div>
+<div class="button-div">
+    <button (click)="login()">Login</button>
+</div>

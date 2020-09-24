@@ -1,16 +1,23 @@
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { POCLibComponent } from './poclib.component';
-import { POCLibService } from './poclib.service';
+import { LoginComponent } from './login/login.component';
 
 
 
 @NgModule({
-  declarations: [POCLibComponent],
+  declarations: [
+    POCLibComponent,
+    LoginComponent
+  ],
   imports: [
     FormsModule
   ],
-  exports: [POCLibComponent],
-  providers: [POCLibService]
+  exports: [
+    POCLibComponent,
+    LoginComponent
+  ],
+  providers: [
+  ]
 })
 export class POCLibModule { }

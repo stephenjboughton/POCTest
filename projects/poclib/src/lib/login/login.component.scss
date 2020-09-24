@@ -1,0 +1,120 @@
+$login-color: $white;
+$user-img-border-color: rgba(0, 0, 0, .1);
+
+.login-container {
+  color: $login-color;
+  text-align: center;
+
+  .item {
+    background-color: transparent;
+    border-color: $login-color;
+    color: $login-color;
+
+    p {
+      color: darken($login-color, 15%);
+    }
+  }
+
+  .text-input-wp {
+    border-color: $login-color;
+  }
+
+  .label {
+    color: $login-color;
+  }
+
+  .input-has-focus {
+    .label {
+      color: $login-color;
+    }
+  }
+
+  // sass-lint:disable-block nesting-depth
+  .list-md {
+    .item-input {
+      &.input-has-focus {
+        &:last-child {
+          @include md-input-highlight($login-color);
+        }
+      }
+    }
+  }
+
+  .list-ios {
+    .item-input {
+      &.input-has-focus {
+        &:last-child {
+          @include ios-input-highlight($login-color);
+        }
+      }
+    }
+  }
+}
+
+.login-logo {
+  bottom: 0;
+  left: 0;
+  padding: 0 10px;
+  position: fixed;
+  right: 0;
+}
+
+.login-inner {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+@media(min-height: 500px) {
+  .login-inner {
+    margin-top: 10%;
+  }
+}
+
+.login-buttons {
+  margin: 40px 0;
+}
+
+.login-user {
+  margin-bottom: 40px;
+
+  img {
+    border: 6px solid $user-img-border-color;
+    border-radius: 50%;
+    max-height: 100px;
+  }
+
+  // username
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.copyright {
+  padding: $content-padding;
+  text-align: center;
+
+  p {
+    margin: 0;
+    margin-bottom: 4px;
+  }
+ 
+}
+
+.attention-needed {
+  color: #f6891f;
+}
+
+.secret-click {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  left: 0px;
+  background-color: none !important;
+}
