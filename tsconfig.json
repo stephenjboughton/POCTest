@@ -19,6 +19,10 @@
       "poclib": [
         "dist/poclib/poclib",
         "dist/poclib"
+      ],
+      "services": [
+        "dist/services/services",
+        "dist/services"
       ]
     }
   },
